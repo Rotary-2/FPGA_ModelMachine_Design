@@ -1,0 +1,171 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dG:/verilog/course_design/work
+vDataMem
+!s110 1772368682
+!i10b 1
+!s100 Q=51YZDnPPGRSXf4Adj961
+ITgKETO5[Oo<NT]?FXaGJX2
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dG:/verilog/course_design/FPGA_ModelMachine_Design
+w1772368644
+8G:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v
+L0 3
+Z2 OL;L;10.4;61
+r1
+!s85 0
+31
+!s108 1772368682.902000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v|
+!i113 0
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@data@mem
+vEX
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 djR4EEQ=5FITfVnNM37C00
+I4mEOcDPA9n=g0?jINO`J`0
+R1
+w1772368658
+8G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\EX.v
+L0 3
+R2
+!s108 1772368682.857000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v|
+!i113 0
+R3
+n@e@x
+vID
+!s110 1772368683
+!i10b 1
+!s100 <HQKRn[:RdkfZ]oSK<H2X0
+IURH@O13_XHJ6^^1D6@eQG3
+R0
+R1
+w1772368653
+8G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\ID.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1772368683.089000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v|
+!i113 0
+R3
+n@i@d
+vIF
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 N6<]Nl3o:SC<[El77cNbQ3
+I<baJRzSm:?dX7=hDGbe^Q2
+R1
+w1772368676
+8G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\IF.v
+L0 3
+R2
+!s108 1772368682.725000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v|
+!i113 0
+R3
+n@i@f
+vInstMem
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 A@DM<_fUFbPAPdA8GY<Lm1
+IG8]^6^`BOK`4L5f9?E>=E3
+R1
+w1772368637
+8G:\verilog\course_design\FPGA_ModelMachine_Design\InstMem.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\InstMem.v
+L0 3
+R2
+!s108 1772368682.960000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\InstMem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\InstMem.v|
+!i113 0
+R3
+n@inst@mem
+vMIPS
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 DDl4iB@ShUon=XAQlKLlJ1
+IiB^LD7iA;5P^`3]n060jg1
+R1
+w1772368668
+8G:\verilog\course_design\FPGA_ModelMachine_Design\MIPS.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\MIPS.v
+L0 3
+R2
+!s108 1772368683.010000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\MIPS.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\MIPS.v|
+!i113 0
+R3
+n@m@i@p@s
+vRegFile
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 o`e]CPkc3X<zZlLZaokH90
+I@koM_RV2XclFEJP3maGM;2
+R1
+w1772368672
+8G:\verilog\course_design\FPGA_ModelMachine_Design\RegFile.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\RegFile.v
+L0 3
+R2
+!s108 1772368682.809000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\RegFile.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\RegFile.v|
+!i113 0
+R3
+n@reg@file
+vsoc_tb
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 `[O6VAUYGh[oZ6Q5m?S421
+Ia<o4CnZzU]DkV4TY7`Fln2
+R1
+w1772368663
+8G:\verilog\course_design\FPGA_ModelMachine_Design\testbench.v
+FG:\verilog\course_design\FPGA_ModelMachine_Design\testbench.v
+L0 3
+R2
+!s108 1772368683.053000
+!s107 define.v|G:\verilog\course_design\FPGA_ModelMachine_Design\testbench.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:\verilog\course_design\FPGA_ModelMachine_Design\testbench.v|
+!i113 0
+R3
