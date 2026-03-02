@@ -5,37 +5,63 @@ module cpu_top(
     input wire rst
 );
 
+// ========================
+// PC
+// ========================
 reg [31:0] pc;
 wire [31:0] next_pc;
 
+// ========================
+// 异常 / eret / syscall
+// ========================
 wire exception;
 wire eret;
 
+// ========================
+// LL/SC
+// ========================
 wire ll;
 wire sc;
-wire syscall;
-
 reg LLbit;
 
+// ========================
+// CP0
+// ========================
 wire [31:0] epc;
 wire [31:0] cp0_data;
 
+// ========================
+// 指令解码
+// ========================
 wire [5:0] opcode;
 wire [5:0] funct;
 wire [4:0] rs;
+wire [4:0] rt;
+wire [4:0] rd;
 
-assign opcode = 6'b0;   // 这里应该来自指令
-assign funct  = 6'b0;
-assign rs     = 5'b0;
+wire jalr_ctrl;
+wire regwrite_ctrl;
+
+// ======================== 
+// 指令寄存器 / 示例
+// ========================
+wire [31:0] inst;
+wire syscall;
+
+assign opcode = inst[31:26];
+assign rs     = inst[25:21];
+assign rt     = inst[20:16];
+assign rd     = inst[15:11];
+assign funct  = inst[5:0];
 
 // ========================
-// 控制器实例
+// 控制器
 // ========================
 control u_control(
     .opcode(opcode),
     .funct(funct),
     .rs(rs),
-    .regwrite(),
+    .regwrite(regwrite_ctrl),
     .memwrite(),
     .memread(),
     .mfc0(),
@@ -43,11 +69,42 @@ control u_control(
     .eret(eret),
     .syscall(syscall),
     .ll(ll),
-    .sc(sc)
+    .sc(sc),
+    .jalr_ctrl(jalr_ctrl)
 );
 
 // ========================
-// CP0 实例
+// 寄存器文件
+// ========================
+// 寄存器文件
+wire [31:0] regaData, regbData;
+reg [31:0] wdata;
+reg [4:0] waddr;
+reg we;
+
+RegFile u_regfile(
+    .clk(clk),
+    .rst(rst),
+    .we(we),
+    .waddr(waddr),
+    .wdata(wdata),
+    .regaAddr(rs),
+    .regbAddr(rt),
+    .regaData(regaData),
+    .regbData(regbData)
+);
+
+// 写回逻辑
+always @(*) begin
+    //waddr = rd;                     // 使用指令里的 rd
+    //waddr = 29;                     // 使用指令里的 rd
+    //wdata = jalr_ctrl ? (pc + 8) : regbData; // jalr 返回地址，其他普通写回用执行结果
+    //wdata = jalr_ctrl ? 9 : 8; // jalr 返回地址，其他普通写回用执行结果
+    //we = regwrite_ctrl && (rd != 0); // rd=0 不可写
+end
+
+// ========================
+// CP0
 // ========================
 cp0 u_cp0(
     .clk(clk),
@@ -67,6 +124,23 @@ cp0 u_cp0(
 );
 
 // ========================
+// LLbit
+// ========================
+always @(posedge clk) begin
+    if(rst)
+        LLbit <= 0;
+    else if(ll)
+        LLbit <= 1;
+    else if(sc)
+        LLbit <= 0;
+end
+
+// ========================
+// 异常
+// ========================
+assign exception = syscall;
+
+// ========================
 // PC 更新
 // ========================
 always @(posedge clk) begin
@@ -77,22 +151,9 @@ always @(posedge clk) begin
 end
 
 assign next_pc =
-        eret ? epc :
-        exception ? 32'h80000180 :
+        eret        ? epc :
+        exception   ? 32'h80000180 :
+        jalr_ctrl   ? regaData :
         pc + 4;
-
-// =======================
-// LLbit
-// =======================
-always @(posedge clk) begin
-    if(rst)
-        LLbit <= 0;
-    else if(ll)
-        LLbit <= 1;
-    else if(sc)
-        LLbit <= 0;
-end
-
-assign exception = syscall;
 
 endmodule

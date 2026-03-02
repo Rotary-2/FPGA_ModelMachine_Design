@@ -13,7 +13,8 @@ module control(
     output reg eret,
     output reg syscall,
     output reg ll,
-    output reg sc
+    output reg sc,
+    output reg jalr_ctrl 
 );
 
 always @(*) begin
@@ -26,6 +27,7 @@ always @(*) begin
     syscall = 0;
     ll = 0;
     sc = 0;
+    jalr_ctrl = 0;
 
     case(opcode)
 
@@ -54,8 +56,13 @@ always @(*) begin
         end
 
         `Inst_r: begin
-            if(funct == `Inst_syscall)
-                syscall = 1;
+            case(funct)
+                `Inst_jalr: begin
+                    jalr_ctrl = 1;
+                    regwrite = 1;
+                    $display("JALR detected!");
+                end
+            endcase
         end
 
     endcase

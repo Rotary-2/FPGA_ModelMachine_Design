@@ -52,6 +52,7 @@ wire [4:0] rt   = instruction[20:16];
 wire [4:0] rd   = instruction[15:11];
 wire [5:0] op   = instruction[31:26];
 wire [5:0] func = instruction[5:0];
+wire [4:0] shamt = instruction[10:6];
 
 // =====================================================
 // 寄存器堆
@@ -77,7 +78,7 @@ RegFile rf(
 // =====================================================
 // EX
 // =====================================================
-wire [31:0] aluOut;
+wire [31:0] exOut;
 wire [31:0] Hi;
 wire [31:0] Lo;
 
@@ -91,36 +92,29 @@ wire [4:0] cp0_raddr;
 
 wire [4:0] excepttype;
 
-wire [31:0] imm = {{16{instruction[15]}}, instruction[15:0]}; 
+wire [31:0] imm = {{16{instruction[15]}}, instruction[15:0]};
 
 EX ex0(
     .clk(clk),
     .rst(rst),
-
     .op(op),
     .func(func),
-
     .regaData(regaData),
     .regbData(regbData),
-
-    .regcData(aluOut),
+    .regcData(exOut),
     .Hi(Hi),
     .Lo(Lo),
-
     .memWrite(memWrite),
     .memCe(memCe),
-
     .exception(exception),
     .eret(eret),
     .excepttype(excepttype),
-
     .cp0_we(cp0_we),
     .cp0_waddr(cp0_waddr),
     .cp0_wdata(cp0_wdata),
     .cp0_raddr(cp0_raddr),
-
     .imm(imm),
-    .shamt(instruction[10:6])
+    .shamt(shamt)
 );
 
 // =====================================================
@@ -132,7 +126,7 @@ DataMem dm(
     .clk(clk),
     .ce(memCe),
     .we(memWrite),
-    .addr(aluOut),
+    .addr(exOut),
     .dataIn(regbData),
     .dataOut(memOut)
 );
@@ -147,20 +141,15 @@ wire [31:0] cause;
 cp0 cp0_0(
     .clk(clk),
     .rst(rst),
-
     .we_i(cp0_we),
     .waddr_i(cp0_waddr),
     .data_i(cp0_wdata),
-
     .raddr_i(cp0_raddr),
     .data_o(cp0_rdata),
-
     .exception_i(exception),
     .current_pc_i(pc),
     .excepttype_i(excepttype),
-
     .eret_i(eret),
-
     .epc_o(epc),
     .status_o(status),
     .cause_o(cause)
@@ -172,38 +161,33 @@ cp0 cp0_0(
 
 // 写回寄存器选择
 assign writeReg =
-    (op == `Inst_r)        ? rd :
-    (op == `Inst_lw)       ? rt :
-    (op == `Inst_addi)     ? rt :
-    (op == `Inst_andi)     ? rt :
-    (op == `Inst_ori)      ? rt :
-    (op == `Inst_xori)     ? rt :
-    (op == `Inst_lui)      ? rt :
-    (op == `Inst_cop0)     ? rt :
-                             5'b00000; // 默认写寄存器0，不写
+    (op == `Inst_r)    ? rd :
+    (op == `Inst_lw)   ? rt :
+    (op == `Inst_addi) ? rt :
+    (op == `Inst_andi) ? rt :
+    (op == `Inst_ori)  ? rt :
+    (op == `Inst_xori) ? rt :
+    (op == `Inst_lui)  ? rt :
+    (op == `Inst_cop0) ? rt :
+                         5'b00000;
 
 // 寄存器写使能
-assign regWrite =
-    (op == `Inst_r)        ? 1'b1 :
-    (op == `Inst_lw)       ? 1'b1 :
-    (op == `Inst_addi)     ? 1'b1 :
-    (op == `Inst_andi)     ? 1'b1 :
-    (op == `Inst_ori)      ? 1'b1 :
-    (op == `Inst_xori)     ? 1'b1 :
-    (op == `Inst_lui)      ? 1'b1 :
-    (op == `Inst_cop0)     ? 1'b1 :
-                             1'b0;
+wire inst_writes_reg =
+    (op == `Inst_r)    ? 1'b1 :
+    (op == `Inst_lw)   ? 1'b1 :
+    (op == `Inst_addi) ? 1'b1 :
+    (op == `Inst_andi) ? 1'b1 :
+    (op == `Inst_ori)  ? 1'b1 :
+    (op == `Inst_xori) ? 1'b1 :
+    (op == `Inst_lui)  ? 1'b1 :
+    (op == `Inst_cop0) ? 1'b1 :
+                         1'b0;
+
+assign regWrite = inst_writes_reg && (writeReg != 5'd0);
 
 // 写回数据选择
-assign writeData =
-    (op == `Inst_lw)       ? memOut :
-    (op == `Inst_addi)     ? aluOut :
-    (op == `Inst_andi)     ? aluOut :
-    (op == `Inst_ori)      ? aluOut :
-    (op == `Inst_xori)     ? aluOut :
-    (op == `Inst_lui)      ? {imm[15:0],16'b0} : // LUI 高16位填 imm
-    (op == `Inst_r)        ? aluOut :
-    (op == `Inst_cop0)     ? cp0_rdata :
-                             32'b0;
+assign writeData = (op == `Inst_lw)   ? memOut :
+                   (op == `Inst_cop0) ? cp0_rdata :
+                                        exOut;
 
 endmodule

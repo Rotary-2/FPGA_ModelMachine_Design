@@ -1,54 +1,9 @@
-G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module DataMem
-
-Top level modules:
-	DataMem
-
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/control.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/control.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module control
-
-Top level modules:
-	control
-
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/ALU.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/ALU.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module ALU
-
-Top level modules:
-	ALU
-
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/define.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/define.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
-
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/cp0.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/cp0.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module cp0
-
-Top level modules:
-	cp0
-
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v
+G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module InstMem
 
 Top level modules:
 	InstMem
-
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module RegFile
-
-Top level modules:
-	RegFile
-
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module soc_tb
-
-Top level modules:
-	soc_tb
 
 } {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -57,6 +12,20 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	MIPS
 
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/EX.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/EX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX
+
+Top level modules:
+	EX
+
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module DataMem
+
+Top level modules:
+	DataMem
+
 } {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/cpu_top.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/cpu_top.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module cpu_top
@@ -64,11 +33,35 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	cpu_top
 
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module RegFile
+
+Top level modules:
+	RegFile
+
 } {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/IF.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/IF.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module IF
 
 Top level modules:
 	IF
+
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/cp0.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/cp0.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module cp0
+
+Top level modules:
+	cp0
+
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/define.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/define.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module soc_tb
+
+Top level modules:
+	soc_tb
 
 } {} {}}
