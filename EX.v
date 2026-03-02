@@ -46,8 +46,6 @@ always @(*) begin
     cp0_wdata = 0;
     cp0_raddr = 0;
 
-    $display("Time=%0t | op=%b | imm=%d", $time, op, imm);
-
     // ================= R 型 =================
     if(op == `Inst_r) begin
         case(func)
