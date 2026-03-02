@@ -9,7 +9,7 @@ z2
 cModel Technology
 dG:/verilog/course_design/work
 vALU
-Z0 !s110 1772415810
+Z0 !s110 1772420565
 !i10b 1
 !s100 T6m3YOGd]8`e31V]AC>k>1
 I^9E`Mf7EJF`6]TgL0<V;M2
@@ -23,7 +23,7 @@ Z3 OL;L;10.4;61
 r1
 !s85 0
 31
-!s108 1772415810.832000
+!s108 1772420565.844000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/ALU.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/ALU.v|
 !i113 0
@@ -44,7 +44,7 @@ R3
 r1
 !s85 0
 31
-!s108 1772415810.889000
+!s108 1772420565.889000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/control.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/control.v|
 !i113 0
@@ -63,7 +63,7 @@ w1772412986
 FG:/verilog/course_design/FPGA_ModelMachine_Design/cp0.v
 L0 3
 R3
-!s108 1772415810.780000
+!s108 1772420565.792000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/cp0.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/cp0.v|
 !i113 0
@@ -83,19 +83,19 @@ R3
 r1
 !s85 0
 31
-!s108 1772415810.957000
+!s108 1772420565.928000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/cpu_top.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/cpu_top.v|
 !i113 0
 R4
 vdata_mem
-R0
+!s110 1772416389
 !i10b 1
-!s100 2598JUZ8Rj>[bG2nB;LRm2
-IKS8Q^U85CMRNh8HRWn4NW1
+!s100 C1_Aj`PFK`AaK`:XDF9PJ2
+I8GjfJAM0zki60ChGzF2ZW2
 R1
 R2
-w1772415669
+w1772416384
 Z5 8G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v
 Z6 FG:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v
 L0 1
@@ -103,9 +103,9 @@ R3
 r1
 !s85 0
 31
-!s108 1772415810.538000
-!s107 G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v|
-Z7 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v|
+!s108 1772416389.813000
+Z7 !s107 G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v|
+Z8 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v|
 !i113 0
 R4
 vDataMem
@@ -114,17 +114,17 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 Q=51YZDnPPGRSXf4Adj961
-Ikc[=7?b]k52hKlGl:O`=j0
+!s100 KeXW:^EZL>>1eCcMHO>`A3
+Izz:QMjDazg[LI@34lKZO31
 R2
-w1772368644
+w1772416545
 R5
 R6
-L0 3
+L0 1
 R3
-!s108 1772413228.070000
-!s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v|
+!s108 1772420565.610000
 R7
+R8
 !i113 0
 R4
 n@data@mem
@@ -134,22 +134,22 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 e1l;`K6Kb@<Fad5F=BBM[3
-IhZW3e1ijkSDCL[aJek@Rd1
+!s100 i>RTAYU2l^UL4CX?PkG6k1
+IXea>G8z6_008Ff;e1HE800
 R2
-w1772415805
+w1772420406
 8G:/verilog/course_design/FPGA_ModelMachine_Design/EX.v
 FG:/verilog/course_design/FPGA_ModelMachine_Design/EX.v
 L0 3
 R3
-!s108 1772415810.486000
+!s108 1772420565.564000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/EX.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/EX.v|
 !i113 0
 R4
 n@e@x
 vID
-R0
+!s110 1772416551
 !i10b 1
 !s100 <HQKRn[:RdkfZ]oSK<H2X0
 IlP][Z4l8GnUILD1YXzF:30
@@ -163,7 +163,7 @@ R3
 r1
 !s85 0
 31
-!s108 1772415810.725000
+!s108 1772416551.132000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/ID.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/ID.v|
 !i113 0
@@ -183,7 +183,7 @@ w1772411898
 FG:/verilog/course_design/FPGA_ModelMachine_Design/IF.v
 L0 3
 R3
-!s108 1772415810.344000
+!s108 1772420565.427000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/IF.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/IF.v|
 !i113 0
@@ -195,15 +195,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 ez?K@MS3jc[:o:l4LXb`n0
-I78l3kDQ>YdoiY40za<[zL1
+!s100 `:B:?BLSf0DSZ9@9damQb3
+IQ]@SF85;SNk4LO=ZS7EBn2
 R2
-w1772413211
+w1772420557
 8G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v
 FG:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v
 L0 3
 R3
-!s108 1772415810.583000
+!s108 1772420565.658000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v|
 !i113 0
@@ -215,15 +215,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 9]^m^D53F<giC[nM8@7MD2
-IIMG=1C?^;07=ZgIMj;c]S0
+!s100 oP1?6`AaHEi>a5CO;82nQ1
+Ii8TAAoA?nX4eH=>LiH]Ym1
 R2
-w1772412982
+w1772420428
 8G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v
 FG:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v
 L0 3
 R3
-!s108 1772415810.635000
+!s108 1772420565.704000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v|
 !i113 0
@@ -238,12 +238,12 @@ r1
 !s100 o`e]CPkc3X<zZlLZaokH90
 I^5ga`5QI_XQ`7?KFRC08V3
 R2
-w1772368672
+w1772416902
 8G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v
 FG:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v
 L0 3
 R3
-!s108 1772415810.446000
+!s108 1772420565.518000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v|
 !i113 0
@@ -258,12 +258,12 @@ r1
 !s100 `[O6VAUYGh[oZ6Q5m?S421
 IKjNW`a@z[NlE<WCFQzj@;3
 R2
-w1772368663
+w1772419784
 8G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v
 FG:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v
 L0 3
 R3
-!s108 1772415810.679000
+!s108 1772420565.749000
 !s107 define.v|G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v|
 !i113 0

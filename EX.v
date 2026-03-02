@@ -34,7 +34,7 @@ reg [63:0] mulres;
 
 always @(*) begin
 
-    regcData = 0;
+    regcData = 32'bx;
     memWrite = 0;
     memCe    = 0;
     exception = 0;
@@ -45,6 +45,8 @@ always @(*) begin
     cp0_waddr = 0;
     cp0_wdata = 0;
     cp0_raddr = 0;
+
+    $display("Time=%0t | op=%b | imm=%d", $time, op, imm);
 
     // ================= R 型 =================
     if(op == `Inst_r) begin

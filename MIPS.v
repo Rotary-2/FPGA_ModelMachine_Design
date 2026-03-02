@@ -36,8 +36,12 @@ IF if0(
 // =====================================================
 InstMem im(
     .ce(romCe),
+    .clk(clk),
     .addr(pc),
-    .data(instruction)
+    .writeData(32'b0),
+    .memWrite(1'b0),
+    .data(instruction),
+    .memOut()
 );
 
 // =====================================================
@@ -87,6 +91,8 @@ wire [4:0] cp0_raddr;
 
 wire [4:0] excepttype;
 
+wire [31:0] imm = {{16{instruction[15]}}, instruction[15:0]}; 
+
 EX ex0(
     .clk(clk),
     .rst(rst),
@@ -111,7 +117,10 @@ EX ex0(
     .cp0_we(cp0_we),
     .cp0_waddr(cp0_waddr),
     .cp0_wdata(cp0_wdata),
-    .cp0_raddr(cp0_raddr)
+    .cp0_raddr(cp0_raddr),
+
+    .imm(imm),
+    .shamt(instruction[10:6])
 );
 
 // =====================================================
