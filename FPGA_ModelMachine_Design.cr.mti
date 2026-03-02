@@ -1,221 +1,60 @@
-G:/verilog/course_design/FPGA_ModelMachine_Design/ID.v {0 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v}
+G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\MIPS.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MIPS
+
+Top level modules:
+	MIPS
+
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/InstMem.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\InstMem.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module InstMem
+
+Top level modules:
+	InstMem
+
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/ID.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module ID
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(22): (vlog-2163) Macro `RstEnable is undefined.
 
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(22): near ")": syntax error, unexpected ')'.
+Top level modules:
+	ID
 
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(24): (vlog-2163) Macro `Nop is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(25): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(25): near ";": syntax error, unexpected ';'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(26): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(26): near ";": syntax error, unexpected ';'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(27): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(27): near ";": syntax error, unexpected ';'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(28): (vlog-2163) Macro `Zero is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(28): near ";": syntax error, unexpected ';'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(29): (vlog-2163) Macro `Zero is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(29): near ";": syntax error, unexpected ';'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(30): (vlog-2163) Macro `Zero is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(30): near ";": syntax error, unexpected ';'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(31): (vlog-2163) Macro `Zero is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(31): near ";": syntax error, unexpected ';'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(34): (vlog-2163) Macro `Inst_ori is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(35): (vlog-2163) Macro `Inst_or is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(36): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(37): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(38): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(40): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(44): (vlog-2163) Macro `Inst_addi is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(45): (vlog-2163) Macro `Inst_add is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(46): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(47): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(48): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(50): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(54): (vlog-2163) Macro `Inst_lw is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(55): (vlog-2163) Macro `Inst_lw is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(56): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(57): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(58): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(60): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(64): (vlog-2163) Macro `Inst_sw is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(65): (vlog-2163) Macro `Inst_sw is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(66): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(67): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(68): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(71): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(74): (vlog-2163) Macro `Inst_beq is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(75): (vlog-2163) Macro `Inst_beq is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(76): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(77): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(78): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(81): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(84): (vlog-2163) Macro `Inst_bne is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(85): (vlog-2163) Macro `Inst_bne is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(86): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(87): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(88): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(91): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(94): (vlog-2163) Macro `Inst_j is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(95): (vlog-2163) Macro `Inst_j is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(96): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(97): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(98): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(99): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(100): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(101): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(105): (vlog-2163) Macro `Nop is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(106): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(107): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(108): (vlog-2163) Macro `Invalid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(109): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(110): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(111): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(112): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(119): (vlog-2163) Macro `RstEnable is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(120): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(121): (vlog-2163) Macro `Valid is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(128): (vlog-2163) Macro `RstEnable is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(129): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\ID.v(130): (vlog-2163) Macro `Valid is undefined.
-
-
-} {4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0 28.0 29.0 30.0 31.0 32.0 33.0 34.0 35.0 36.0 37.0 38.0 39.0 40.0 41.0 42.0 43.0 44.0 45.0 46.0 47.0 48.0 49.0 50.0 51.0 52.0 53.0 54.0 55.0 56.0 57.0 58.0 59.0 60.0 61.0 62.0 63.0 64.0 65.0 66.0 67.0 68.0 69.0 70.0 71.0 72.0 73.0 74.0 75.0 76.0 77.0 78.0 79.0 80.0 81.0 82.0 83.0 84.0 85.0 86.0 87.0 88.0 89.0 90.0 91.0 92.0 93.0 94.0 95.0 96.0 97.0 98.0 99.0 100.0 101.0 102.0 103.0 104.0 105.0 106.0 107.0 108.0 109.0 110.0 111.0 112.0 113.0 114.0 115.0 116.0 117.0 118.0 119.0 120.0 121.0 122.0 123.0 124.0 125.0 126.0 127.0 128.0 129.0 130.0 131.0 132.0 133.0 134.0 135.0 136.0 137.0 138.0 139.0 140.0 141.0 142.0 143.0 144.0 145.0 146.0 147.0 148.0 149.0 150.0 151.0 152.0 153.0} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v {0 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v}
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/DataMem.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module DataMem
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v(12): (vlog-2163) Macro `RamEnable is undefined.
 
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\DataMem.v(12): near ")": syntax error, unexpected ')'.
+Top level modules:
+	DataMem
 
-
-} {4.0 5.0 6.0 7.0} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/EX.v {0 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v}
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/EX.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module EX
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(14): (vlog-2163) Macro `Inst_r is undefined.
 
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(14): near ")": syntax error, unexpected ')'.
+Top level modules:
+	EX
 
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(16): (vlog-2163) Macro `Inst_add is undefined.
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/RegFile.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\RegFile.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module RegFile
 
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(17): (vlog-2163) Macro `Inst_sub is undefined.
+Top level modules:
+	RegFile
 
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(18): (vlog-2163) Macro `Inst_and is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(19): (vlog-2163) Macro `Inst_or is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(20): (vlog-2163) Macro `Inst_xor is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(21): (vlog-2163) Macro `Inst_sll is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(22): (vlog-2163) Macro `Inst_srl is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(23): (vlog-2163) Macro `Inst_slt is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(24): (vlog-2163) Macro `Inst_mult is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(25): (vlog-2163) Macro `Inst_div is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(29): (vlog-2163) Macro `Inst_mfhi is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(29): End label 'regcData' not allowed with an unnamed block.
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(29): near "=": syntax error, unexpected '='.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\EX.v(30): (vlog-2163) Macro `Inst_mflo is undefined.
-
-
-} {4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0 28.0 29.0 30.0 32.0 33.0 34.0} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/define.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\define.v}
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/define.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\define.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/IF.v {0 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v}
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/IF.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v}
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module IF
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(11): (vlog-2163) Macro `RstEnable is undefined.
 
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(11): near ")": syntax error, unexpected ')'.
+Top level modules:
+	IF
 
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(12): (vlog-2163) Macro `RomDisable is undefined.
+} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/testbench.v {1 {vlog -work work -vopt -stats=none {G:\verilog\course_design\FPGA_ModelMachine_Design\testbench.v}
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module soc_tb
 
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(14): (vlog-2163) Macro `RomEnable is undefined.
+Top level modules:
+	soc_tb
 
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(17): (vlog-2163) Macro `RstEnable is undefined.
-
-** Error: (vlog-13069) G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(17): near ")": syntax error, unexpected ')'.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(18): (vlog-2163) Macro `Zero is undefined.
-
-** Error: G:\verilog\course_design\FPGA_ModelMachine_Design\IF.v(19): (vlog-2163) Macro `Valid is undefined.
-
-
-} {4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0} {}}
+} {} {}}
