@@ -43,13 +43,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	soc_tb
 
-} {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/MIPS.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module MIPS
-
-Top level modules:
-	MIPS
-
 } {} {}} G:/verilog/course_design/FPGA_ModelMachine_Design/cpu_top.v {1 {vlog -work work -vopt -stats=none G:/verilog/course_design/FPGA_ModelMachine_Design/cpu_top.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module cpu_top

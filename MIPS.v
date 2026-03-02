@@ -169,17 +169,41 @@ cp0 cp0_0(
 // =====================================================
 // 写回控制
 // =====================================================
+
+// 写回寄存器选择
 assign writeReg =
-    (op == `Inst_cop0) ? rt : rd;
+    (op == `Inst_r)        ? rd :
+    (op == `Inst_lw)       ? rt :
+    (op == `Inst_addi)     ? rt :
+    (op == `Inst_andi)     ? rt :
+    (op == `Inst_ori)      ? rt :
+    (op == `Inst_xori)     ? rt :
+    (op == `Inst_lui)      ? rt :
+    (op == `Inst_cop0)     ? rt :
+                             5'b00000; // 默认写寄存器0，不写
 
+// 寄存器写使能
 assign regWrite =
-    (op == `Inst_r) ||
-    (op == `Inst_lw) ||
-    (op == `Inst_cop0);
+    (op == `Inst_r)        ? 1'b1 :
+    (op == `Inst_lw)       ? 1'b1 :
+    (op == `Inst_addi)     ? 1'b1 :
+    (op == `Inst_andi)     ? 1'b1 :
+    (op == `Inst_ori)      ? 1'b1 :
+    (op == `Inst_xori)     ? 1'b1 :
+    (op == `Inst_lui)      ? 1'b1 :
+    (op == `Inst_cop0)     ? 1'b1 :
+                             1'b0;
 
+// 写回数据选择
 assign writeData =
-    (op == `Inst_lw)   ? memOut :
-    (op == `Inst_cop0) ? cp0_rdata :
-                         aluOut;
+    (op == `Inst_lw)       ? memOut :
+    (op == `Inst_addi)     ? aluOut :
+    (op == `Inst_andi)     ? aluOut :
+    (op == `Inst_ori)      ? aluOut :
+    (op == `Inst_xori)     ? aluOut :
+    (op == `Inst_lui)      ? {imm[15:0],16'b0} : // LUI 高16位填 imm
+    (op == `Inst_r)        ? aluOut :
+    (op == `Inst_cop0)     ? cp0_rdata :
+                             32'b0;
 
 endmodule
