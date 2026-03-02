@@ -48,7 +48,7 @@ always @(*) begin
             else if(rs == `Inst_mtc0) begin
                 mtc0 = 1;
             end
-            else if(rs == `Inst_eret_rs && funct == `Inst_eret) begin
+            else if(rs == `Inst_eret_rs && funct == `Inst_eret_fun) begin
                 eret = 1;
             end
         end
