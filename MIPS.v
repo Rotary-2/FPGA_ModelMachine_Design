@@ -5,26 +5,172 @@ module MIPS(
     input wire rst
 );
 
+// =====================================================
+// IF
+// =====================================================
 wire [31:0] pc;
 wire [31:0] instruction;
 wire romCe;
 
-wire [31:0] regaData, regbData;
-wire [31:0] aluOut;
-wire [31:0] memOut;
+wire exception;
+wire eret;
+wire [31:0] epc;
 
-wire [4:0] rs = instruction[25:21];
-wire [4:0] rt = instruction[20:16];
-wire [4:0] rd = instruction[15:11];
+wire jCe    = 1'b0;
+wire [31:0] jAddr = 32'b0;
 
-wire [5:0] op = instruction[31:26];
+IF if0(
+    .clk(clk),
+    .rst(rst),
+    .exception(exception),
+    .eret(eret),
+    .epc(epc),
+    .jAddr(jAddr),
+    .jCe(jCe),
+    .romCe(romCe),
+    .pc(pc)
+);
+
+// =====================================================
+// 指令存储器
+// =====================================================
+InstMem im(
+    .ce(romCe),
+    .addr(pc),
+    .data(instruction)
+);
+
+// =====================================================
+// 指令字段
+// =====================================================
+wire [4:0] rs   = instruction[25:21];
+wire [4:0] rt   = instruction[20:16];
+wire [4:0] rd   = instruction[15:11];
+wire [5:0] op   = instruction[31:26];
 wire [5:0] func = instruction[5:0];
 
-wire [31:0] imm = {{16{instruction[15]}},instruction[15:0]};
+// =====================================================
+// 寄存器堆
+// =====================================================
+wire [31:0] regaData;
+wire [31:0] regbData;
+wire [31:0] writeData;
+wire [4:0]  writeReg;
+wire regWrite;
 
-IF if0(clk,rst,0,0,romCe,pc);
-InstMem im(romCe,pc,instruction);
-RegFile rf(clk,rst,1,rd,aluOut,rs,rt,regaData,regbData);
-EX ex0(rst,op,func,regaData,regbData,aluOut,,);
+RegFile rf(
+    .clk(clk),
+    .rst(rst),
+    .we(regWrite),
+    .waddr(writeReg),
+    .wdata(writeData),
+    .regaAddr(rs),
+    .regbAddr(rt),
+    .regaData(regaData),
+    .regbData(regbData)
+);
+
+// =====================================================
+// EX
+// =====================================================
+wire [31:0] aluOut;
+wire [31:0] Hi;
+wire [31:0] Lo;
+
+wire memWrite;
+wire memCe;
+
+wire cp0_we;
+wire [4:0] cp0_waddr;
+wire [31:0] cp0_wdata;
+wire [4:0] cp0_raddr;
+
+wire [4:0] excepttype;
+
+EX ex0(
+    .clk(clk),
+    .rst(rst),
+
+    .op(op),
+    .func(func),
+
+    .regaData(regaData),
+    .regbData(regbData),
+
+    .regcData(aluOut),
+    .Hi(Hi),
+    .Lo(Lo),
+
+    .memWrite(memWrite),
+    .memCe(memCe),
+
+    .exception(exception),
+    .eret(eret),
+    .excepttype(excepttype),
+
+    .cp0_we(cp0_we),
+    .cp0_waddr(cp0_waddr),
+    .cp0_wdata(cp0_wdata),
+    .cp0_raddr(cp0_raddr)
+);
+
+// =====================================================
+// 数据存储器
+// =====================================================
+wire [31:0] memOut;
+
+DataMem dm(
+    .clk(clk),
+    .ce(memCe),
+    .we(memWrite),
+    .addr(aluOut),
+    .dataIn(regbData),
+    .dataOut(memOut)
+);
+
+// =====================================================
+// CP0
+// =====================================================
+wire [31:0] cp0_rdata;
+wire [31:0] status;
+wire [31:0] cause;
+
+cp0 cp0_0(
+    .clk(clk),
+    .rst(rst),
+
+    .we_i(cp0_we),
+    .waddr_i(cp0_waddr),
+    .data_i(cp0_wdata),
+
+    .raddr_i(cp0_raddr),
+    .data_o(cp0_rdata),
+
+    .exception_i(exception),
+    .current_pc_i(pc),
+    .excepttype_i(excepttype),
+
+    .eret_i(eret),
+
+    .epc_o(epc),
+    .status_o(status),
+    .cause_o(cause)
+);
+
+// =====================================================
+// 写回控制
+// =====================================================
+assign writeReg =
+    (op == `Inst_cop0) ? rt : rd;
+
+assign regWrite =
+    (op == `Inst_r) ||
+    (op == `Inst_lw) ||
+    (op == `Inst_cop0);
+
+assign writeData =
+    (op == `Inst_lw)   ? memOut :
+    (op == `Inst_cop0) ? cp0_rdata :
+                         aluOut;
 
 endmodule

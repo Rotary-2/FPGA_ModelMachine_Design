@@ -3,24 +3,38 @@
 module IF(
     input wire clk,
     input wire rst,
+
+    input wire exception,
+    input wire eret,
+    input wire [31:0] epc,
+
     input wire [31:0] jAddr,
     input wire jCe,
-    output reg romCe,
+
+    output wire romCe,
     output reg [31:0] pc
 );
 
-always @(*)
-    if(rst == `RstEnable)
-        romCe = `RomDisable;
-    else
-        romCe = `RomEnable;
+// =======================
+// ROM 使能
+// =======================
+assign romCe = (rst == `RstEnable) ? `RomDisable : `RomEnable;
 
-always @(posedge clk)
+
+// =======================
+// PC 更新逻辑
+// =======================
+always @(posedge clk) begin
     if(rst == `RstEnable)
         pc <= `Zero;
+    else if(eret)
+        pc <= epc;
+    else if(exception)
+        pc <= 32'h80000180;   // 异常入口地址
     else if(jCe == `Valid)
         pc <= jAddr;
     else
         pc <= pc + 4;
+end
 
 endmodule
