@@ -5,9 +5,9 @@ module InstMem(
     input wire clk,
     input wire [31:0] addr,
     input wire [31:0] writeData,
-    input wire memWrite,       // 对应 sw
-    output reg [31:0] data,    // lw输出
-    output reg [31:0] memOut   // 方便调试
+    input wire memWrite,      
+    output reg [31:0] data,  
+    output reg [31:0] memOut   
 );
 
 reg [31:0] instmem [1023:0];
@@ -68,6 +68,10 @@ initial begin
     instmem[32] = 32'h40816000; // mtc0 $1,$12
     instmem[33] = 32'h40016800; // mfc0 $1,$13
     instmem[34] = 32'h42000018; // eret
+    instmem[35] = 32'h04200002; // bltz $1,2
+    instmem[36] = 32'h1C200002; // bgtz $1,2
+    instmem[37] = 32'hC0030000; // ll $3,0($0)
+    instmem[38] = 32'hE0030000; // sc $3,0($0)
 end
 
 endmodule

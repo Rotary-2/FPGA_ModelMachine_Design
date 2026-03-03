@@ -2,7 +2,10 @@
 
 module cpu_top(
     input wire clk,
-    input wire rst
+    input wire rst,
+
+    input wire [31:0] regaData,
+    input wire jalr_ctrl
 );
 
 // ========================
@@ -39,7 +42,6 @@ wire [4:0] rs;
 wire [4:0] rt;
 wire [4:0] rd;
 
-wire jalr_ctrl;
 wire regwrite_ctrl;
 
 // ======================== 
@@ -77,7 +79,7 @@ control u_control(
 // 寄存器文件
 // ========================
 // 寄存器文件
-wire [31:0] regaData, regbData;
+wire [31:0] regbData;
 reg [31:0] wdata;
 reg [4:0] waddr;
 reg we;
@@ -95,12 +97,8 @@ RegFile u_regfile(
 );
 
 // 写回逻辑
-always @(*) begin
-    //waddr = rd;                     // 使用指令里的 rd
-    //waddr = 29;                     // 使用指令里的 rd
-    //wdata = jalr_ctrl ? (pc + 8) : regbData; // jalr 返回地址，其他普通写回用执行结果
-    //wdata = jalr_ctrl ? 9 : 8; // jalr 返回地址，其他普通写回用执行结果
-    //we = regwrite_ctrl && (rd != 0); // rd=0 不可写
+always @(*) begin                         
+    we = regwrite_ctrl && (rd != 0); 
 end
 
 // ========================
